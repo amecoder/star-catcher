@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>별똥별 받기</title>
+  <meta name="description" content="60초 동안 떨어지는 별똥별을 받는 작은 브라우저 게임. 돌은 피하세요!">
+  <meta property="og:title" content="별똥별 받기 — 내 기록 깰 수 있어?">
+  <meta property="og:description" content="60초 동안 별똥별을 받는 작은 게임. 휴대폰에서도 됩니다.">
+  <meta property="og:image" content="https://amecoder.github.io/star-catcher/og-image.png">
+  <meta property="og:url" content="https://amecoder.github.io/star-catcher/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⭐</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="hud" aria-live="polite">
+      <span>점수 <b id="score">0</b></span>
+      <span>남은 시간 <b id="time">60</b>초</span>
+      <span id="lives" aria-label="목숨">❤️❤️❤️</span>
+    </header>
+
+    <canvas id="sky" width="400" height="600" aria-label="게임 화면"></canvas>
+
+    <section id="start" class="panel">
+      <h1>별똥별 받기</h1>
+      <p>바구니를 움직여 떨어지는 별을 받으세요.<br>⭐ 1점 · 🌟 5점 · 🪨 돌은 목숨 -1</p>
+      <p class="hint">휴대폰: 화면을 손가락으로 끌기 · 컴퓨터: 마우스나 ← → 키</p>
+      <p class="best">내 최고 기록: <b id="best">0</b>점</p>
+      <button id="play" type="button">시작하기</button>
+    </section>
+
+    <section id="end" class="panel" hidden>
+      <h2>끝! <span id="final">0</span>점</h2>
+      <p id="rank"></p>
+      <p id="newBest" class="new" hidden>🎉 최고 기록을 깼어요!</p>
+      <div class="row">
+        <button id="again" type="button">한 번 더</button>
+        <button id="share" type="button" class="ghost">친구에게 자랑하기</button>
+      </div>
+      <p id="shareMsg" class="hint" role="status"></p>
+    </section>
+  </main>
+  <footer class="foot">연습용 예시 게임 · <a href="https://github.com/amecoder/star-catcher">소스 보기</a></footer>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
